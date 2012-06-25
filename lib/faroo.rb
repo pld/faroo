@@ -21,12 +21,15 @@ class Faroo
   #   num_results: (Integer+)
 
   API_PATH = 'http://www.faroo.com/instant.json?'
+  CHUNK_SIZE = 10
+  MAX_TTL = 2
 
   attr_accessor :referer, :num_results
 
   def initialize(referer='', num_results=100)
     @referer = referer
     @num_results = num_results
+    @chunk_size = 10
   end
 
   def web(query, start=1, language='en')
@@ -45,15 +48,26 @@ class Faroo
     # l=language (en, de, zh)
     # src=source (web, news)
 
-    params = "start=#{start}&length=#{@num_results}&q=#{CGI.escape(query)}"
-    params += "&src=#{src}&l=#{language}"
-    response = open(API_PATH + params, { 'Referer' => @referer })
-    return nil if response.class.superclass == Net::HTTPServerError
-    doc = JSON.load(response)
+    # faster with 10
+    params = "length=#{CHUNK_SIZE}&q=#{CGI.escape(query)}&src=#{src}&l=#{language}"
+    results = []
+    threads = []
 
-    return [] if doc['length'] == 0
+    # Faroo API significantly faster when results are of size 10
+    1.upto(@num_results / 10) do |start|
+      threads << Thread.new(start) do |_start|
+        url = "#{API_PATH}#{params}&start=#{(_start - 1) * CHUNK_SIZE + 1}"
+        response = open(url, { 'Referer' => @referer })
+        unless response.class.superclass == Net::HTTPServerError
+          doc = JSON.load(response)
+          results += doc['results']
+        end
+      end
+    end
 
-    doc['results'].map do |result|
+    threads.each { |thread| thread.join(MAX_TTL) }
+
+    results.map do |result|
       FarooResult.new(
         result['title'],
         result['kwic'],

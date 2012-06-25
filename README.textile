@@ -3,6 +3,13 @@ h1. faroo
 Gem providing a API for the Faroo search engine.
 https://rubygems.org/gems/faroo
 
+h2. Notes
+
+To improve performance results are retrieved in chunks of 10 simultaneously
+through threads.  Threads are timed out after MAX_TTL seconds (currently 2).
+It is best effort, users will see an inconsistent number of retrieved results
+and tests will fail if requests are slow.
+
 h2. Installation
 
 * install the gem
