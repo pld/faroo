@@ -1,5 +1,8 @@
+require 'benchmark'
 require 'test/unit'
+
 require 'faroo'
+
 
 class FarooTest < Test::Unit::TestCase
 
@@ -51,6 +54,16 @@ class FarooTest < Test::Unit::TestCase
   def test_return_empty_if_not_results
     # if 'Ambiogenesis568' returns results this test is trivial
     assert_equal true, @obj.web('Ambiogenesis568').empty?
+  end
+
+  # benchmark
+  def test_benchmark_no_asserts
+    Benchmark.bm(10) do |x|
+      (10..100).step(10) do |max|
+        @obj.num_results = max
+        x.report("web search #{max}:") { results = @obj.web('helioid') }
+      end
+    end
   end
 end
 
