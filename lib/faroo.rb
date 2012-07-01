@@ -77,7 +77,8 @@ class Faroo
         result['author'],
         result['news'],
         result['votes'],
-        result['date'],
+#        result['date'],
+        Time.now,
         result['related']
       )
     end
