@@ -1,27 +1,31 @@
-h1. faroo
+# faroo
 
 Gem providing a API for the Faroo search engine.
 https://rubygems.org/gems/faroo
 
-h2. Notes
+## Notes
 
 To improve performance results are retrieved in chunks of 10 simultaneously
 through threads.  Threads are timed out after MAX_TTL seconds (currently 2).
 It is best effort, users will see an inconsistent number of retrieved results
 and tests will fail if requests are slow.
 
-h2. Installation
+## Installation
 
 * install the gem
 
-@gem install faroo@
+```bash
+gem install faroo
+```
 
-h2. Example
+## Example
 
-@>> Faroo.new.search('nanotubes')@
-@=> [ #<FarooResult:...>, ... ]@
+```ruby
+Faroo.new.web('nanotubes')
+=> [ #<FarooResult:...>, ... ]
+```
 
-h2. Ownership
+## Ownership
 
 Copyright (c) 2012, Peter Lubell-Doughtie. Licensed under the 3-clause BSD License, which is also known as the "Modified BSD License". Full text of the license is below. This license is GPL compatible (http://www.gnu.org/licenses/license-list.html#ModifiedBSD).
 
