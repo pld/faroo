@@ -1,7 +1,7 @@
 s = Gem::Specification.new do |s|
   s.name         = 'faroo'
-  s.version      = '0.0.3'
-  s.date         = '2012-06-24'
+  s.version      = '0.0.4'
+  s.date         = '2014-12-06'
   s.summary      = 'API for Faroo'
   s.description  = 'API for Faroo'
   s.authors      = ['Peter Lubell-Doughtie']

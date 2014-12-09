@@ -21,9 +21,18 @@ gem install faroo
 ## Example
 
 ```ruby
-Faroo.new.web('nanotubes')
+Faroo.new(token).web('nanotubes')
 => [ #<FarooResult:...>, ... ]
 ```
+
+## Contributing
+
+Running the tests:
+
+```bash
+TOKEN='any-string-should-work' bundle exec rspec
+```
+
 
 ## Ownership
 

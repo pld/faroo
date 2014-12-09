@@ -21,15 +21,13 @@ class Faroo
   #   num_results: (Integer+)
 
   API_PATH = 'http://www.faroo.com/api?'
-  CHUNK_SIZE = 10
-  MAX_TTL = 2
 
   attr_accessor :referer, :num_results
 
   def initialize(api_key, opts = {})
     @api_key = api_key
     @referer = opts[:referer] || ""
-    @num_results = opts[:num_results] || 100
+    @num_results = opts[:num_results] || 10
     @chunk_size = 10
   end
 
@@ -49,7 +47,7 @@ class Faroo
     # l=language (en, de, zh)
     # src=source (web, news)
 
-    params = "length=#{CHUNK_SIZE}&q=#{CGI.escape(query)}&src=#{src}&l=#{language}&key=#{@api_key}"
+    params = "q=#{CGI.escape(query)}&start=#{start}&length=#{num_results}&src=#{src}&l=#{language}&key=#{@api_key}"
 
     result = nil
 
@@ -58,7 +56,6 @@ class Faroo
     unless response.class.superclass == Net::HTTPServerError
        doc = JSON.load(response)
        results = doc['results']
-       puts result
        results.map do |result|
          FarooResult.new(
            result['title'],

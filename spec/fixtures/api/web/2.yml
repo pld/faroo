@@ -1,0 +1,88 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.faroo.com/api?key=<TOKEN>&l=en&length=8&q=test&src=web&start=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Referer:
+      - ''
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 09 Dec 2014 18:28:38 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Allow-Methods:
+      - GET
+      Access-Control-Allow-Headers:
+      - X-Requested-With
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1602'
+    body:
+      encoding: UTF-8
+      string: '{"results":[{"title": "CSS3 test","kwic": "Test your browser. I got
+        two different scores in Safari, although they were close. Chrome scored about
+        nine points higher.","content": "","url": "http://css3test.com","iurl": "","domain":
+        "css3test.com","author": "Jim Dalrymple","news": true,"votes": "10","date":
+        1360622563000,"related":[]},{"title": "Test your vocabulary","kwic": "Test
+        Your Vocabulary:  English has the most words of any language on Earth. TestYourVocab.com
+        is part of an independent American-Brazilian research ...","content": "","url":
+        "http://testyourvocab.com/","iurl": "","domain": "testyourvocab.com","author":
+        "Shawn King","news": true,"votes": "10","date": 1390509127000,"related":[]},{"title":
+        "Tests of general relativity - Wikipedia, the free encyclopedia","kwic": "At
+        its introduction in 1915, the general theory of relativity did not have a
+        solid empirical foundation. It was known that it correctly accounted ...","content":
+        "","url": "http://en.wikipedia.org/wiki/Tests_of_general_relativity","iurl":
+        "http://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Spacetime_curvature.png/250px-Spacetime_curvature.png","domain":
+        "en.wikipedia.org","author": "","news": false,"votes": "1","date": 1346463661779,"related":[]},{"title":
+        "Australia''s top six face biggest challenge in first Test against India","kwic":
+        "The top orders of both teams may hold the key to who wins the Border-Gavaskar
+        Trophy.","content": "","url": "http://www.brisbanetimes.com.au/sport/cricket/australias-top-six-face--biggest-challenge-in-first-test-against-india-20141208-122l6z.html","iurl":
+        "http://www.brisbanetimes.com.au/content/dam/images/1/2/2/x/0/b/image.imgtype.thumbnail.320x214.png/1418044983907.jpg","domain":
+        "www.brisbanetimes.com.au","author": "","news": true,"votes": "1","date":
+        1417993200000,"related":[]},{"title": "Phillip Hughes remembered before first
+        Test at Adelaide Oval","kwic": "... Darren Lehmann choked back tears as Phillip
+        Hughes was given a moving send-off by cricket fans in his adopted home state
+        before the first Test ...","content": "","url": "http://www.canberratimes.com.au/sport/cricket/phillip-hughes-remembered-before-first-test-at-adelaide-oval-20141209-1234qu.html","iurl":
+        "http://www.canberratimes.com.au/content/dam/images/1/2/3/6/a/x/image.imgtype.thumbnail.320x214.png/1418085735877.jpg","domain":
+        "www.canberratimes.com.au","author": "","news": true,"votes": "1","date":
+        1418079600000,"related":[]},{"title": "David Warner battles demons for Test
+        century to remember","kwic": "David Warner sat with his head in his hands
+        last Friday, his mind \"nowhere\" but genuinely contemplating whether he would
+        play this Test.","content": "","url": "http://www.smh.com.au/sport/david-warner-battles-demons-for-test-century-to-remember-20141209-123nip.html","iurl":
+        "http://www.smh.com.au","domain": "www.smh.com.au","author": "","news": true,"votes":
+        "1","date": 1418079600000,"related":[]},{"title": "Michael Clarke suffers
+        another injury setback in first Test in Adelaide","kwic": "Michael Clarke''s
+        desperation to play for Phillip Hughes in the first Test has resulted in another
+        flare up of the captain''s chronic back condition ...","content": "","url":
+        "http://www.theage.com.au/sport/cricket/michael-clarke-suffers-another-injury-setback-in-first-test-in-adelaide-20141209-123hd3.html","iurl":
+        "http://www.theage.com.au/content/dam/images/1/2/3/l/k/d/image.imgtype.thumbnail.320x214.png/1418110927661.jpg","domain":
+        "www.theage.com.au","author": "","news": true,"votes": "1","date": 1418079600000,"related":[]},{"title":
+        "David Warner''s 10th Test century puts him in illustrious company","kwic":
+        "David Warner has brought up his 10th Test century in only 33 matches, making
+        him the fourth-fastest Australian to notch up 10 Test tons.","content": "","url":
+        "http://www.watoday.com.au/sport/cricket/david-warners-10th-test-century-puts-him-in-illustrious-company-20141209-123ecq.html","iurl":
+        "http://www.watoday.com.au/content/dam/images/1/2/3/e/p/8/image.imgtype.thumbnail.320x214.png/1418099077533.jpg","domain":
+        "www.watoday.com.au","author": "","news": true,"votes": "1","date": 1418079600000,"related":[]}],"query":
+        "test","suggestions":[],"count":100,"start":1,"length":8,"time": "23"}'
+    http_version: 
+  recorded_at: Tue, 09 Dec 2014 18:28:46 GMT
+recorded_with: VCR 2.9.3
