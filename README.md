@@ -1,3 +1,5 @@
+[![Build Status](https://api.travis-ci.org/pld/faroo.svg?branch=master)](https://travis-ci.org/pld/faroo)
+
 # faroo
 
 Gem providing a API for the Faroo search engine.
